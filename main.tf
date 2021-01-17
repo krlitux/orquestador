@@ -2,8 +2,17 @@ provider azurerm {
   features {}
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = local.rsgr_infra
+    storage_account_name = local.stac_infra
+    container_name       = var.environment
+    key                  = local.terraform_tfstate
+  }
+}
+
 module "aspl01" {
-  source = "git::https://github.com/krlitux/appservice_plan.git?ref=master"
+  source = "git::https://github.com/krlitux/appservice_plan.git?ref=1.0.0"
 
   application_code = var.application_code
   environment      = var.environment
@@ -14,7 +23,7 @@ module "aspl01" {
 }
 
 module "asfc01" {
-  source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=master"
+  source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=1.0.0"
   depends_on = [module.aspl01]
 
   application_code = var.application_code
