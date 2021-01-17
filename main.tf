@@ -4,10 +4,10 @@ provider azurerm {
 
 terraform {
   backend "azurerm" {
-    resource_group_name  = local.rsgr_infra
-    storage_account_name = local.stac_infra
-    container_name       = var.environment
-    key                  = local.terraform_tfstate
+    resource_group_name  = "${local.rsgr_infra}"
+    storage_account_name = "${local.stac_infra}"
+    container_name       = "${lower(var.environment)}"
+    key                  = "${local.terraform_tfstate}"
   }
 }
 
