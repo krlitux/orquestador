@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+- stage : Provision
+  displayName: 'Terrafrom wirh Azure Devops'
+  jobs:
+  - job: 'Container Build'
+    displayName: 'Building Container Instance'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+    - group: AzureSPvars
+    steps:
+    - script: |
+        set -e
+        terraform init -input=false
+        terraform plan -input=false
+        terraform apply -input=false -auto-approve
+      name: 'RunTerraform'
+      displayName: 'RunTerraform'
+      env: 
+        #arm_subscription_id: "f0b8a631-62c7-4583-bd96-9515606409f5"
+        #arm_client_id      : "5943fc72-c94e-4a8f-b62c-a3c46cec0a0e"
+        #arm_client_secret  : "b4JOGWI63_04-Dlfa..qu2_BCvmkgNQ~PR"
+        #arm_tenant_id      : "932d69f5-a800-4527-9dcf-eabfe5c25af4"
