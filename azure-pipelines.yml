@@ -6,6 +6,7 @@
 trigger:
 - master
 
+stages:
 - stage: Provision
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
