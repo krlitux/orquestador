@@ -9,6 +9,5 @@ aspl_sku_size = "s1"
 aspl_kind     = "linux"
 
 #### Variables para App Service for Container
-asfc_aspl_id    = module.aspl01.aspl_id
 container_type  = "docker"
 container_image = "tutum/hello-world"

@@ -21,18 +21,12 @@ variable base_correlative {
   default     = "01"
 }
 
-#### Variables para App Service Plan
-variable container_type {
-  description = "Especifica el numero correlativo asignado a la infraestructura base."
-  type        = string
-  default     = "docker"
-}
-
 variable location {
   description = "Código de la región a desplegar."
   type        = list(string)
 }
 
+#### Variables para App Service Plan
 variable aspl_sku_tier {
   description = "Especifica el nivel del Service Plan."
   type        = string
@@ -59,17 +53,7 @@ variable container_type {
   default     = "docker"
 }
 
-variable location {
-  description = "Código de la región a desplegar."
-  type        = list(string)
-}
-
 variable container_image {
   description = "Especifica el nombre de la imagen desplegar."
   type        = string
-}
-
-variable asfc_aspl_id {
-  description = "ID del App Service Plan creado por el módulo ASPL."
-  type        = map
 }
