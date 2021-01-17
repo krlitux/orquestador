@@ -3,7 +3,7 @@ provider azurerm {
 }
 
 module "aspl01" {
-  source = "git::https://github.com/krlitux/appservice_plan.git?ref=1.0.0"
+  source = "git::https://github.com/krlitux/appservice_plan.git?ref=master"
 
   application_code = var.application_code
   environment      = var.environment
@@ -14,7 +14,7 @@ module "aspl01" {
 }
 
 module "asfc01" {
-  source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=1.0.0"
+  source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=master"
   depends_on = [module.aspl01]
 
   application_code = var.application_code
