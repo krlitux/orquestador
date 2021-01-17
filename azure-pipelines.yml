@@ -6,16 +6,13 @@
 trigger:
 - master
 
-resources:
-- repo: self
-
 - stage : Provision
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
   - job: 'Container Build'
-    displayName: 'Building Container Instance'
+    displayName: 'Building Container Instance'  
     pool:
-      vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'  
     variables:
     - group: AzureSPvars
     steps:
@@ -23,9 +20,9 @@ resources:
         set -e
         terraform init -input=false
         terraform plan -input=false
-        terraform apply -input=false -auto-approve
-      name: 'RunTerraform'
-      displayName: 'RunTerraform'
+        terraform apply -auto-approve -input=false 
+      name: RunTerraform
+      displayName: 'Run Terraform'
       env: 
         ARM_CLIENT_ID       : $(ARM_CLIENT_ID)
         ARM_CLIENT_SECRET   : $(ARM_CLIENT_SECRET)
