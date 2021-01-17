@@ -6,7 +6,7 @@
 trigger:
 - master
 
-- stage : Provision
+- stage: Provision
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
   - job: 'Container Build'
@@ -24,7 +24,7 @@ trigger:
       name: RunTerraform
       displayName: 'Run Terraform'
       env: 
-        ARM_CLIENT_ID       : $(ARM_CLIENT_ID)
-        ARM_CLIENT_SECRET   : $(ARM_CLIENT_SECRET)
-        ARM_SUBSCRIPTION_ID : $(ARM_SUBSCRIPTION_ID)
-        ARM_TENANT_ID       : $(ARM_TENANT_ID)
+        ARM_CLIENT_ID: $(ARM_CLIENT_ID)
+        ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+        ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
+        ARM_TENANT_ID: $(ARM_TENANT_ID)
