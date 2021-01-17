@@ -10,7 +10,7 @@ stages:
 - stage: Provision
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
-  - job: 'Container Build'
+  - job: Container_Build
     displayName: 'Building Container Instance'  
     pool:
       vmImage: 'ubuntu-latest'  
@@ -22,7 +22,7 @@ stages:
         terraform init -input=false
         terraform plan -input=false
         terraform apply -auto-approve -input=false 
-      name: RunTerraform
+      name: Run_Terraform
       displayName: 'Run Terraform'
       env: 
         ARM_CLIENT_ID: $(ARM_CLIENT_ID)
