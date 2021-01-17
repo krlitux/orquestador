@@ -10,8 +10,8 @@ stages:
 - stage: Provision
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
-  - job: Container_Build
-    displayName: 'Building Container Instance'  
+  - job: Build_Infrastructure
+    displayName: 'Building Cloud Infrastructure'  
     pool:
       vmImage: 'ubuntu-latest'  
     variables:
