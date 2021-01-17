@@ -2,7 +2,7 @@ provider azurerm {
   features {}
 }
 
-module aspl01 {
+module "aspl01" {
   source = "git::https://github.com/krlitux/appservice_plan.git?ref=1.0.0"
 
   application_code = var.application_code
@@ -13,7 +13,7 @@ module aspl01 {
   aspl_kind        = var.aspl_kind
 }
 
-module asfc01 {
+module "asfc01" {
   source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=1.0.0"
   depends_on = [module.aspl01]
 

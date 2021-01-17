@@ -1,16 +1,16 @@
 #### Modulo App Service Plan
 output "aspl_name" {
-  description = "Mapa con los nombres de los App Service Plan aprovisionados"
+  description = "Nombres de los App Service Plan aprovisionados"
   value       = module.aspl01.aspl_name
 }
 
 output "aspl_tier" {
-  description = "Mapa con los niveles de los App Service Plan aprovisionados"
+  description = "Niveles de los App Service Plan aprovisionados"
   value       = module.aspl01.aspl_tier
 }
 
 output "aspl_id" {
-  description = "Mapa con los IDs de los App Service Plan aprovisionados"
+  description = "IDs de los App Service Plan aprovisionados"
   value       = module.aspl01.aspl_id
 }
 
