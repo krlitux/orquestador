@@ -4,10 +4,10 @@ provider azurerm {
 
 terraform {
   backend "azurerm" {
-    resource_group_name  = "${local.rsgr_infra}"
-    storage_account_name = "${local.stac_infra}"
-    container_name       = "${lower(var.environment)}"
-    key                  = "${local.terraform_tfstate}"
+    resource_group_name = "RSGRCUSTESTINFR01"
+    storage_account_name = "staccustestinfr01"
+    container_name = "cert"
+    key = "terraform.tfstate"
   }
 }
 
@@ -32,4 +32,14 @@ module "asfc01" {
   asfc_aspl_id     = module.aspl01.aspl_id
   container_type   = var.container_type
   container_image  = var.container_image
+}
+
+module "azfd01" {
+  source     = "git::https://github.com/krlitux/front_door.git?ref=master"
+  depends_on = [module.asfc01]
+
+  application_code = var.application_code
+  environment      = var.environment
+  location         = var.location
+  azfd_backend     = var.azfd_backend
 }

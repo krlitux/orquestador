@@ -4,14 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- destroy
 
 stages:
-- stage: Deploy
+- stage: Undeploy
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
-  - job: Deploy_Infrastructure
-    displayName: 'Building Cloud Infrastructure'  
+  - job: Undeploy_Infrastructure
+    displayName: 'Destroying Cloud Infrastructure'  
     pool:
       vmImage: 'ubuntu-latest'  
     variables:
@@ -21,7 +21,7 @@ stages:
         set -e
         terraform init -input=false
         terraform plan -input=false
-        terraform apply -auto-approve -input=false 
+        terraform destroy -auto-approve -input=false 
       name: Run_Terraform
       displayName: 'Run Terraform'
       env: 

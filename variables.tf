@@ -58,11 +58,15 @@ variable container_image {
   type        = string
 }
 
-locals {
-  rsgr_code         = "rsgr"
-  infr_code         = "infr"
-  stac_code         = "stac"
-  rsgr_infra        = upper(format("%s%s%s%s%s%s", local.rsgr_code, var.location[0], var.environment, var.application_code, local.infr_code, var.base_correlative))
-  stac_infra        = lower(format("%s%s%s%s%s%s", local.stac_code, var.location[0], var.environment, var.application_code, local.infr_code, var.base_correlative))
-  terraform_tfstate = "terraform.tfstate"
+#### Variables para Front Door
+variable azfd_backend {
+  description = "Variables para backend: host_name, host_header, http_port, https_port, priority, weight"
+  type = list(object({
+    host_name   = string
+    host_header = string
+    http_port   = string
+    https_port  = string
+    priority    = string
+    weight      = string
+  }))
 }
