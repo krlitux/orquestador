@@ -4,8 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- destroy
-
+  branches:
+    include:
+    - destroy
+    exclude:
+    - develop
+    - master
 stages:
 - stage: Undeploy
   displayName: 'Terrafrom wirh Azure Devops'

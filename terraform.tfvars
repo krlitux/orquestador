@@ -1,7 +1,7 @@
 #### Variables globales
 application_code = "test"
 environment      = "cert"
-location         = ["cus"]
+location         = ["cus","eu2"]
 
 #### Variables para App Service Plan
 aspl_sku_tier = "standard"
