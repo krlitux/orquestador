@@ -57,3 +57,16 @@ variable container_image {
   description = "Especifica el nombre de la imagen desplegar."
   type        = string
 }
+
+#### Variables para Front Door
+variable azfd_backend {
+  description = "Variables para backend: host_name, host_header, http_port, https_port, priority, weight"
+  type = list(object({
+    host_name   = string
+    host_header = string
+    http_port   = string
+    https_port  = string
+    priority    = string
+    weight      = string
+  }))
+}
