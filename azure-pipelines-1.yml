@@ -4,16 +4,28 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- destroy
 
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Undeploy
+  displayName: 'Terrafrom wirh Azure Devops'
+  jobs:
+  - job: Undeploy_Infrastructure
+    displayName: 'Destroying Cloud Infrastructure'  
+    pool:
+      vmImage: 'ubuntu-latest'  
+    variables:
+    - group: AzureSPvars
+    steps:
+    - script: |
+        set -e
+        terraform init -input=false
+        terraform plan -input=false
+        terraform destroy -auto-approve -input=false 
+      name: Run_Terraform
+      displayName: 'Run Terraform'
+      env: 
+        ARM_CLIENT_ID: $(ARM_CLIENT_ID)
+        ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+        ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
+        ARM_TENANT_ID: $(ARM_TENANT_ID)

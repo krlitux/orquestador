@@ -7,10 +7,10 @@ trigger:
 - master
 
 stages:
-- stage: Provision
+- stage: Deploy
   displayName: 'Terrafrom wirh Azure Devops'
   jobs:
-  - job: Build_Infrastructure
+  - job: Deploy_Infrastructure
     displayName: 'Building Cloud Infrastructure'  
     pool:
       vmImage: 'ubuntu-latest'  
