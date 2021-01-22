@@ -10,6 +10,14 @@ trigger:
     exclude:
     - develop
     - destroy
+pr:
+  branches:
+    include:
+    - releases/*
+    exclude:
+    - master
+    - develop
+    - destroy
 stages:
 - stage: Deploy
   displayName: 'Terrafrom wirh Azure Devops'
