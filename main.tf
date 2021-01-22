@@ -34,7 +34,7 @@ module "asfc01" {
   container_image  = var.container_image
 }
 
-module "azfd01" {
+/*module "azfd01" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=master"
   depends_on = [module.asfc01]
 
@@ -42,4 +42,4 @@ module "azfd01" {
   environment      = var.environment
   location         = var.location
   azfd_backend     = var.azfd_backend
-}
+}*/
