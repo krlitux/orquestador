@@ -40,7 +40,7 @@ module "asfc02" {
 
   application_code     = var.application_code
   environment          = var.environment
-  location             = var.location[0]
+  location             = [var.location[0]]
   resource_correlative = "02"
   asfc_aspl_id         = module.aspl01.aspl_id
   container_type       = var.container_type
