@@ -23,14 +23,6 @@ azfd_backend = [
     weight      = "33"
   },
   {
-    host_name   = "asfceu2testcert02.azurewebsites.net",
-    host_header = "asfceu2testcert02.azurewebsites.net",
-    http_port   = "80",
-    https_port  = "443",
-    priority    = "1",
-    weight      = "33"
-  },
-  {
     host_name   = "asfccustestcert01.azurewebsites.net",
     host_header = "asfccustestcert01.azurewebsites.net",
     http_port   = "80",

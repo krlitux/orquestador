@@ -34,19 +34,6 @@ module "asfc01" {
   container_image  = var.container_image
 }
 
-module "asfc02" {
-  source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=1.0.0"
-  depends_on = [module.aspl01]
-
-  application_code     = var.application_code
-  environment          = var.environment
-  location             = [var.location[0]]
-  resource_correlative = "02"
-  asfc_aspl_id         = module.aspl01.aspl_id
-  container_type       = var.container_type
-  container_image      = var.container_image
-}
-
 module "azfd01" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=1.0.0"
   depends_on = [module.asfc01]
