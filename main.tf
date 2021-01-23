@@ -47,7 +47,7 @@ module "asfc01" {
   container_image      = var.container_image
 }
 
-module "azfd01" {
+module "azfd02" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=master"
   depends_on = [module.asfc01]
 
