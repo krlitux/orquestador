@@ -48,7 +48,7 @@ module "asfc02" {
 }
 
 module "azfd01" {
-  source     = "git::https://github.com/krlitux/front_door.git?ref=master"
+  source     = "git::https://github.com/krlitux/front_door.git?ref=1.0.0"
   depends_on = [module.asfc01]
 
   application_code = var.application_code
