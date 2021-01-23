@@ -34,7 +34,7 @@ module "asfc01" {
   container_image  = var.container_image
 }
 
-module "asfc01" {
+module "asfc02" {
   source     = "git::https://github.com/krlitux/appservice_for_container.git?ref=1.0.0"
   depends_on = [module.aspl01]
 
@@ -47,7 +47,7 @@ module "asfc01" {
   container_image      = var.container_image
 }
 
-module "azfd02" {
+module "azfd01" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=master"
   depends_on = [module.asfc01]
 
