@@ -13,6 +13,8 @@ container_type  = "docker"
 container_image = "tutum/hello-world"
 
 #### Variables para Front Door
+azfd_backend_latency  = 100
+azfd_session_affinity = false
 azfd_backend = [
   {
     host_name   = "asfceu2testcert01.azurewebsites.net",
@@ -20,7 +22,7 @@ azfd_backend = [
     http_port   = "80",
     https_port  = "443",
     priority    = "1",
-    weight      = "33"
+    weight      = "50"
   },
   {
     host_name   = "asfccustestcert01.azurewebsites.net",
@@ -28,7 +30,7 @@ azfd_backend = [
     http_port   = "80",
     https_port  = "443",
     priority    = "1",
-    weight      = "33"
+    weight      = "50"
   }
 ]
 
