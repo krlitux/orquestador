@@ -1,7 +1,7 @@
 #### Variables globales
 application_code = "test"
 environment      = "cert"
-location         = ["cus", "eu2"]
+location         = ["eu2", "cus"]
 
 #### Variables para App Service Plan
 aspl_sku_tier = "standard"
@@ -13,26 +13,20 @@ container_type  = "docker"
 container_image = "tutum/hello-world"
 
 #### Variables para Front Door
+azfd_backend_latency  = 100
+azfd_session_affinity = false
 azfd_backend = [
-  {
-    host_name   = "asfccustestcert01.azurewebsites.net",
-    host_header = "asfccustestcert01.azurewebsites.net",
-    http_port   = "80",
-    https_port  = "443",
-    priority    = "1",
-    weight      = "50"
-  },
-  {
-    host_name   = "asfccustestcert02.azurewebsites.net",
-    host_header = "asfccustestcert02.azurewebsites.net",
-    http_port   = "80",
-    https_port  = "443",
-    priority    = "1",
-    weight      = "50"
-  },
   {
     host_name   = "asfceu2testcert01.azurewebsites.net",
     host_header = "asfceu2testcert01.azurewebsites.net",
+    http_port   = "80",
+    https_port  = "443",
+    priority    = "1",
+    weight      = "50"
+  },
+  {
+    host_name   = "asfccustestcert01.azurewebsites.net",
+    host_header = "asfccustestcert01.azurewebsites.net",
     http_port   = "80",
     https_port  = "443",
     priority    = "1",
