@@ -20,6 +20,11 @@ output "asfc_name" {
   value       = module.asfc01.asfc_name
 }
 
+output "asfc_hostname" {
+  description = "Nombre del recurso desplegado"
+  value       = module.asfc01.asfc_hostname
+}
+
 output "asfc_id" {
   description = "ID del recurso desplegado"
   value       = module.asfc01.asfc_id
