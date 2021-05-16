@@ -71,7 +71,7 @@ variable azfd_session_affinity {
   default     = false
 }*/ #3er ecenario
 
-/*variable azfd_backend {
+variable azfd_backend {
   description = "Variables para backend: host_name, host_header, http_port, https_port, priority, weight"
   type = list(object({
     host_name   = string
@@ -81,4 +81,4 @@ variable azfd_session_affinity {
     priority    = string
     weight      = string
   }))
-}*/ #2do escenario
+} #2do escenario
