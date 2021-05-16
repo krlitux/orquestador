@@ -59,7 +59,7 @@ variable container_image {
 }
 
 #### Variables para Front Door
-variable azfd_backend_latency {
+/*variable azfd_backend_latency {
   description = "Tiempo en milisegundos que frontdoor tomará en cuenta para considerar un backend saludable."
   type        = number
   default     = 0
@@ -81,4 +81,4 @@ variable azfd_backend {
     priority    = string
     weight      = string
   }))
-} #2do escenario
+}*/ #2do escenario

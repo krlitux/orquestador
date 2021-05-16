@@ -35,7 +35,7 @@ module "asfc01" {
   container_image  = var.container_image
 }
 
-module "azfd01" {
+/*module "azfd01" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=1.1.0"
   depends_on = [module.asfc01]
 
@@ -45,4 +45,4 @@ module "azfd01" {
   azfd_backend_latency  = var.azfd_backend_latency #3er escenario
   azfd_session_affinity = var.azfd_session_affinity #3er escenario
   azfd_backend          = var.azfd_backend
-} #2do escenario
+}*/ #2do escenario
