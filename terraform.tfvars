@@ -13,7 +13,7 @@ container_type  = "docker"
 container_image = "tutum/hello-world"
 
 #### Variables para Front Door
-/*azfd_backend_latency  = 200 #3er escenario
+azfd_backend_latency  = 200 #3er escenario
 azfd_session_affinity = false #3er escenario
 azfd_backend = [
   {
@@ -32,6 +32,6 @@ azfd_backend = [
     priority    = "1",
     weight      = "50"
   }
-] */#2do escenario
+] #2do escenario
 
 #Fin de documento
