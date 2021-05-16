@@ -59,7 +59,7 @@ variable container_image {
 }
 
 #### Variables para Front Door
-/*variable azfd_backend_latency {
+variable azfd_backend_latency {
   description = "Tiempo en milisegundos que frontdoor tomará en cuenta para considerar un backend saludable."
   type        = number
   default     = 0
@@ -69,7 +69,7 @@ variable azfd_session_affinity {
   description = "Permite dirigir el tráfico subsiguiente de una sesión de usuario al mismo backend de la aplicación."
   type        = bool
   default     = false
-}*/ #3er ecenario
+} #3er ecenario
 
 variable azfd_backend {
   description = "Variables para backend: host_name, host_header, http_port, https_port, priority, weight"
