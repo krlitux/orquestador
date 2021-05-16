@@ -69,7 +69,7 @@ variable azfd_session_affinity {
   description = "Permite dirigir el tráfico subsiguiente de una sesión de usuario al mismo backend de la aplicación."
   type        = bool
   default     = false
-}
+} #3er ecenario
 
 variable azfd_backend {
   description = "Variables para backend: host_name, host_header, http_port, https_port, priority, weight"
@@ -81,4 +81,4 @@ variable azfd_backend {
     priority    = string
     weight      = string
   }))
-}
+} #2do escenario

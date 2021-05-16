@@ -44,4 +44,4 @@ output "azfd_id" {
 output "azfd_frontend" {
   description = "Hostname configurado en frontdoor"
   value       = module.azfd01.azfd_frontend
-}
+} #2do escenario

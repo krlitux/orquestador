@@ -1,4 +1,5 @@
 provider azurerm {
+  version = "=2.44.0"
   features {}
 }
 
@@ -41,7 +42,7 @@ module "azfd01" {
   application_code      = var.application_code
   environment           = var.environment
   location              = var.location
-  azfd_backend_latency  = var.azfd_backend_latency
-  azfd_session_affinity = var.azfd_session_affinity
+  azfd_backend_latency  = var.azfd_backend_latency #3er escenario
+  azfd_session_affinity = var.azfd_session_affinity #3er escenario
   azfd_backend          = var.azfd_backend
-}
+} #2do escenario
