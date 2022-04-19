@@ -7,7 +7,7 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "RSGRCUSTESTINFR01"
     storage_account_name = "staccustestinfr01"
-    container_name       = "cert"
+    container_name       = "desa"
     key                  = "terraform.tfstate"
   }
 }
@@ -35,14 +35,24 @@ module "asfc01" {
   container_image  = var.container_image
 }
 
-module "azfd01" {
+/*module "azfd01" {
+  source     = "git::https://github.com/krlitux/front_door.git?ref=1.0.0"
+  depends_on = [module.asfc01]
+
+  application_code      = var.application_code
+  environment           = var.environment
+  location              = var.location
+  azfd_backend          = var.azfd_backend
+}*/ #2do escenario
+
+/*module "azfd01" {
   source     = "git::https://github.com/krlitux/front_door.git?ref=1.1.0"
   depends_on = [module.asfc01]
 
   application_code      = var.application_code
   environment           = var.environment
   location              = var.location
-  azfd_backend_latency  = var.azfd_backend_latency #3er escenario
-  azfd_session_affinity = var.azfd_session_affinity #3er escenario
+  azfd_backend_latency  = var.azfd_backend_latency 
+  azfd_session_affinity = var.azfd_session_affinity 
   azfd_backend          = var.azfd_backend
-} #2do escenario
+}*/ #3do escenario
